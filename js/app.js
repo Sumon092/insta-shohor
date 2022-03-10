@@ -16,7 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  likedPostsId.plus(id);
+  likedPostsId.push(id);
   showPosts(posts);
 };
 
@@ -27,7 +27,6 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  // return text.length > 30 ? 'text' < 30 : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
   if (text.length > 30) {
     return text.slice(0, 30) + "<span class='fw-bold'>...Read More</span>";
   }
@@ -117,7 +116,7 @@ const createPost = (post) => {
                     </a>
 
                     <span>Liked by
-                      <a class="post__name--underline" href="#">user123</a> and
+                      <a class="post__name--underline" href="#">${post.comments[0].user}</a> and
                       <a href="#">73 others</a></span>
                   </div>
 
@@ -149,6 +148,7 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+  document.getElementById("liked").textContent = '';
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
