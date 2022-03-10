@@ -27,13 +27,15 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  /* let description;
-  if (description.length > 30) {
-    description = description.length.slice(0, 30) + 'Read more';
-    console.log(description);
-  } */
-  return text.length < 30 ? 'text' : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
-};
+  // return text.length > 30 ? 'text' < 30 : text.slice(0, 30) + "<span class='fw-bold'>... read more</span>";
+  if (text.length > 30) {
+    return text.slice(0, 30) + "<span class='fw-bold'>...Read More</span>";
+  }
+  else {
+    return text;
+  }
+}
+
 
 const switchTab = (id) => {
   if (id === "posts") {
@@ -106,7 +108,7 @@ const createPost = (post) => {
                   </button>
                 </div>
 
-                <div class="post__content">${displayContent(post.description)}</div>
+                <div class="post__content"onclick="displayContent">${displayContent(post.description)}</div>
 
                 <div class="post__infos">
                   <div class="post__likes">
