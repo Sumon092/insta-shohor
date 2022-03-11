@@ -56,21 +56,42 @@
         <div id="reported">
             <h1>Reported posts</h1>
         </div>
+
+
     </main>
-    <section class="container mx-auto">
+
+
+    <section class="container mx-auto" id="question-answer">
         <h2>Q1 : How does javascript work?</h2>
-        <p><span class="fw-bold">Ans:</span>All programming language is in a human-readable format, but our computer
+        <p class="fs-4"><span class="fw-bold fs-3">Ans:</span>All programming language is in a human-readable format,
+            but our
+            computer
             does not understand this, understand machine code which We know as ones and zeroes. A browser has three main
             programs, the first program is the dom parser and which takes our HTML code and converts it into a structure
             that we visually see, the text parser is the CSS parser which makes sure our document is rendered correctly.
-            The layout engine or rendering engine inside of a browser takes both HTML and CSS and ultimately renders the
+            The layout engine or rendering engine inside of a browser takes both HTML and CSS and ultimately renders
+            the
             page. Javascript engine(eg: V8 engine, spider monkey)takes the javascript syntax in human-readable form and
             converts it into machine code so that our computer can understand our instruction, which is called
             client-side. javascript engine interprets this or it's going to have compilation involved there, such as
             JIT(just in time) compiler, which takes human-readable instructions that we execute at that specific time
             and converts those instructions very quickly. Javascript works this way.</p>
 
+        <h2>Q3: Diffence between local storage and session storage</h2>
+        <p class="fs-4"><span class="fw-bold fs-3">Ans :</span>
+            We know two storage systems, Local and session storage, Local storage stores info until it is removed where
+            session storage is only available for a session of a tab. If Once it is closed, the information will be
+            deleted, but local storage info will not be deleted if the browser or tab is closed, the information will
+            still be there when the browser reopens. Local storage info is also available to multiple tabs. In terms of
+            security protection, local storage is not effective, as javaScript that an attacker injects via XSS runs on
+            the same origin as the rest of the browser application code. An attacker can easily retrieve the value of a
+            secret named with a single line but session storage is less risky than local storage. We can store data in
+            local storage by writing local storage.setItem() and by localStorage.removeItem() We can remove items from
+            local storage.
+        </p>
+
     </section>
+
     <footer></footer>
 
     <!-- add javascript  file  -->
